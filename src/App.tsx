@@ -3,9 +3,14 @@ import {ThemeProvider} from "@mui/material";
 import theme from "./components/theme";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./components/home-page/Home";
+import {LocalizationProvider} from "@mui/x-date-pickers";
+import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
+
+
 
 function App() {
   return (
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Routes>
@@ -13,6 +18,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
+      </LocalizationProvider>
   );
 }
 

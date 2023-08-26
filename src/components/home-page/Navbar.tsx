@@ -1,6 +1,7 @@
 import React from "react";
 import { AppBar, Box, Toolbar, styled, Typography } from "@mui/material";
 import { blue } from "@mui/material/colors";
+import ReactDOM from "react-dom/client";
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
@@ -10,8 +11,10 @@ const monthNames = ["January", "February", "March", "April", "May", "June", "Jul
 const day = current.getDate();
 const month = monthNames[current.getMonth()];
 
+
 const Navbar = () => {
     return (
+        <React.Fragment>
         <AppBar sx={{ background: 'linear-gradient(to right bottom, #19cfff, #1898ba)'}}>
             <Toolbar>
                 <Typography variant={'h4'}>
@@ -24,6 +27,8 @@ const Navbar = () => {
                 </Box>
             </Toolbar>
         </AppBar>
+            <Offset />
+        </React.Fragment>
     )
 }
 
